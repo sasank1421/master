@@ -1,0 +1,29 @@
+data driven
+ FileInputStream f1 = new FileInputStream("C:\\Users\\PK\\Desktop\\SASA.xlsx");---creating excel file
+	  
+	 XSSFWorkbook w1 =  new XSSFWorkbook(f1); 
+	 
+	 XSSFSheet s1 = w1.getSheetAt(0);
+	 
+	 for( int i = 1; i<=s1.getLastRowNum();i++) {
+		 XSSFRow r1=s1.getRow(i);
+		 
+		String uss = r1.getCell(0).getStringCellValue();
+		
+		 String pwd =r1.getCell(1).getStringCellValue();
+	 }
+	 
+	  
+	  driver.get("https://ksrtc.in/oprs-web/login/perform.do");
+	  
+	  //Elements el = new Elements();
+	  
+	  PageFactory.initElements(driver, Elements.class);
+	  
+
+	Elements.us.sendKeys(uss);
+	 
+	Elements.pwd.sendKeys(pwd);
+	 Elements.loginbutton.click();
+	
+	

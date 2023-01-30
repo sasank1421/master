@@ -1,0 +1,119 @@
+TestNG ASSERTIONS
+
+package testng;
+
+public class CALUCULATOR {
+ public int add1 (int a, int b) {
+	 return a+b;
+ }
+ 
+ public int sub1 (int a, int b) {
+	 return a-b;
+ }
+}
+
+package testng;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class CALUCULATORTest {
+	CALUCULATOR cal = new CALUCULATOR();
+
+  @Test
+  public void add1Test() {
+	  Assert.assertEquals(20,cal.add1(10, 10));
+    
+  }
+
+  @Test
+  public void sub1Test() {
+	  Assert.assertEquals(0,cal.sub1(10, 10));
+   
+  }
+}
+--------------------------------
+package testng;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+ public class ASSERTIONSEG{
+	
+
+	@Test
+	public void assertion() {
+		
+		String [] expected = {"lochana"};
+		String [] actual = {"lochana"};
+		Assert.assertEquals(expected,actual);
+	}
+	@Test
+	public void assertion1() {
+		
+		String [] expected = {"lochana"};
+		String [] actual = {"lochanaa"};
+		Assert.assertNotEquals(expected,actual);
+	}
+	
+	@Test
+	public void assertion2() {
+	Object bag = null;
+		
+		Assert.assertNull( null);
+	}
+	
+	@Test
+	public void assertion3() {
+	String[] car = {"red"};
+		
+		Assert.assertNotNull("the car should be red");
+	}
+	
+	
+	@Test
+	public void assertion5 () {
+		int value1 = 5;
+		int value2 = 6;
+		Assert.assertTrue(value1 == 5);
+		
+	}
+	@Test
+	public void assertion6 () {
+		int value1 = 5;
+		int value2 = 6;
+		Assert.assertFalse(value1 == 6);}
+		
+
+}
+
+
+Test	# Passed	# Skipped	# Retried	# Failed	Time (ms)	Included Groups	Excluded Groups
+Default suite
+Default test	6	0	0	0	94		
+Class	Method	Start	Time (ms)
+Default suite
+Default test — passed
+testng.ASSERTIONSEG	assertion	1673871386560	15
+assertion1	1673871386580	1
+assertion2	1673871386584	3
+assertion3	1673871386589	2
+assertion5	1673871386592	2
+assertion6	1673871386595	2
+Default test
+testng.ASSERTIONSEG#assertion
+back to summary
+
+testng.ASSERTIONSEG#assertion1
+back to summary
+
+testng.ASSERTIONSEG#assertion2
+back to summary
+
+testng.ASSERTIONSEG#assertion3
+back to summary
+
+testng.ASSERTIONSEG#assertion5
+back to summary
+
+testng.ASSERTIONSEG#assertion6
+back to summary

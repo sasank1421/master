@@ -1,0 +1,29 @@
+treespackage webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class tree {
+  @Test
+  public void f() {
+	  
+	  
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+	  
+	  driver.get("https://leafground.com/dashboard.xhtml");
+	  driver.get("https://leafground.com/tree.xhtml");
+	  
+	  driver.findElement(By.xpath("//*[@id='j_idt88:0']/div/span[1]")).click();
+	  driver.findElement(By.xpath("//*[@id=\"j_idt88:0_0\"]/div/span[1]")).click();
+	  driver.findElement(By.xpath("//*[@id='j_idt88:0_0_0']/div/div/div")).click();
+	  
+	  driver.findElement(By.xpath("//*[@id='j_idt107']/table/tbody/tr/td[1]/div/span[1]")).click();
+	  driver.findElement(By.xpath("//*[@id='j_idt107']/table/tbody/tr/td[2]/div/table[1]/tbody/tr/td[2]/div/span[1]")).click();
+	  driver.findElement(By.xpath("//*[@id='j_idt107']/table/tbody/tr/td[2]/div/table[1]/tbody/tr/td[3]/div/table[1]/tbody/tr/td[2]/div/span[1]")).click();
+  }
+}

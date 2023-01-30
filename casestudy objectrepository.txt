@@ -1,0 +1,77 @@
+case study ksrtc
+
+object repository
+package Objectrepository2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class elementscasestudy {
+	
+	
+	@FindBy(id="fromPlaceName")
+	public static WebElement origin;
+	
+	@FindBy(xpath="//*[@id=\"ui-id-1\"]/li[2]")
+	public static WebElement chen;
+	
+	@FindBy(id="toPlaceName")
+	public static WebElement destiny;
+	
+	@FindBy(xpath="//*[@id=\"ui-id-2\"]/li")
+	public static WebElement ban;
+	
+	@FindBy(id="txtJourneyDate")
+	public static WebElement fromdate;
+	
+	@FindBy(xpath="//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[4]/td[5]/a")
+	public static WebElement fdate;
+	
+	@FindBy(id="txtReturnJourneyDate")
+	public static WebElement todate;
+	
+	@FindBy(xpath="//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[5]/td[3]")
+	public static WebElement tdate;
+	
+	@FindBy(id ="corover-close-btn")
+	public static WebElement close;
+	
+	
+	@FindBy(xpath="//*[@id=\"bookingsForm\"]/div[1]/div/div[2]/div[3]/button/i")
+	public static WebElement search;
+
+	@FindBy(id ="corover-close-btn")
+	public static WebElement close1;
+	
+	@FindBy(xpath="//*[@id=\"ForwardResults\"]/div[4]")
+	public static WebElement seat;
+
+	@FindBy(xpath="//*[@id=\"ForwardResults\"]/div[4]/div[1]/div[1]/div[3]/div")
+	public static WebElement seats;
+
+	@FindBy(xpath="//*[@id=\"Forward18\"]")
+	public static WebElement seatno;
+	
+	@FindBy(xpath="//*[@id='passenger-details']/div/p/a")
+	public static WebElement pdetails;
+	
+	@FindBy(id="passengerNameForward0")
+	public static WebElement name;
+	
+	@FindBy(xpath="//*[@id=\"genderCodeIdForward0\"]")
+	public static WebElement gender;
+	
+	@FindBy(xpath="//*[@id=\"genderCodeIdForward0\"]/option[2]")
+	public static WebElement gender1;
+	
+	@FindBy(name="passengerAge")
+	public static WebElement age;
+	
+	
+	
+	
+
+}
+

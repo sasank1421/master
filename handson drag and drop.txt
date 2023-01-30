@@ -1,0 +1,39 @@
+package webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class drag {
+  @Test
+  public void f() {
+	  
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+	  
+	  driver.get("https://leafground.com/dashboard.xhtml");
+	  driver.get("https://leafground.com/drag.xhtml");
+
+	-----------------------------coloumns drag and drop------------------- 
+
+  WebElement so= driver.findElement(By.xpath("//*[@id=\'form:j_idt94:j_idt99\']"));
+	  WebElement dest= driver.findElement(By.xpath("//*[@id=\'form:j_idt94:j_idt97\']"));
+
+	  Actions act = new Actions(driver);
+	  act.dragAndDrop(so, dest);
+-------------------------------------------rows drag and drop-----------------
+
+  WebElement so1= driver.findElement(By.xpath("//*[@id=\'form:j_idt111_data\']/tr[1]/td[1]"));
+	  WebElement dest1= driver.findElement(By.xpath("//*[@id=\'form:j_idt111_data\']/tr[5]/td[1]"));
+
+	  Actions act = new Actions(driver);
+	  act.dragAndDrop(so1, dest1);
+	  
+	  
+
+	  

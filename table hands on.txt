@@ -1,0 +1,70 @@
+package webdriver;
+
+
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class tables {
+  @Test
+  public void f() {
+	  
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+	  driver.get("https://leafground.com/table.xhtml");
+	  
+	  
+	  driver.findElement(By.xpath("//*[@id='form:j_idt89_paginator_bottom']/span/a[2]")).click();
+	  
+	  List<WebElement> rows=  driver.findElements(By.xpath("//*[@id=\"form:j_idt89_data\"]/tr"));
+	  System.out.println(rows.size());
+	  
+	   String us = driver.findElement(By.xpath("//*[@id=\"form:j_idt89_data\"]/tr[1]/td[1]")).getText();
+	   
+	   System.out.println("username -"  + us);
+	
+	   String date = driver.findElement(By.xpath("//*[@id=\"form:j_idt89_data\"]/tr[1]/td[4] ")).getText();
+	  
+	   System.out.println("date of joining -"  + date);
+
+
+
+
+
+  }
+}
+result--------------------------
+[RemoteTestNG] detected TestNG version 7.4.0
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 23348
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jan 23, 2023 6:36:46 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+10
+username -Cody Kadeem
+date of joining -2023-01-18
+PASSED: f
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 1, Passes: 1, Failures: 0, Skips: 0
+===============================================
+
+

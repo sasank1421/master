@@ -1,0 +1,33 @@
+handson alerts
+
+
+ driver.get("https://demo.automationtesting.in/Alerts.html");
+	  driver.findElement(By.xpath("//*[@id='OKTab']/button")).click();
+	  Alert alert = driver.switchTo().alert();  
+		  alert.getText();  
+		  System.out.println(alert.getText());
+		  alert.accept();
+		  driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div[1]/ul/li[2]/a")).click();
+		  driver.findElement(By.xpath("//*[@id='CancelTab']/button")).click();
+		  Alert alert1 = driver.switchTo().alert(); 
+		  alert1.dismiss();
+		  
+		  driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div[1]/ul/li[3]/a")).click();
+		  driver.findElement(By.xpath("//*[@id=\"Textbox\"]/button")).click();
+		  Alert alert2 = driver.switchTo().alert();
+		  alert2.sendKeys("lochana");
+		  
+		  alert2.accept();
+
+---------------------------------sweet alerts-----------------------------------------------
+
+driver.get("https://leafground.com/alert.xhtml");
+ driver.findElement(By.xpath("//*[@id='j_idt88:j_idt95']/span[1]")).click();
+	  driver.findElement(By.xpath("//*[@id='j_idt88:j_idt98']/span[1]")).click();
+ driver.findElement(By.xpath("//*[@id='j_idt88:j_idt100']/span[1]")).click();
+	  
+	  driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt101\"]/div[1]/a")).click();
+ driver.findElement(By.id("j_idt88:j_idt106")).click();
+	  driver.findElement(By.id("j_idt88:j_idt109")).click();
+	  
+	  

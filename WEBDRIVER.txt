@@ -1,0 +1,62 @@
+web driver
+
+locators
+
+id 
+name
+cssselector---csselector("tagname[ attribute='value']")
+
+x path ----absolute xpath   starts with  ---/  (from root path to current element)
+            /html/body/div[1]/div[5]/div[2]/div/div[1]/div/form/div[4]/div/input  
+            drawback ---if any changes will done in script it will throw an error because it is not only effect the main element it will show other elements
+                        so it is not correct option to use 
+        
+
+           relative xapath  starts with ---//    
+            **it will use the current element only
+
+           ***{syntax --- "//tagname[@attribute='value']"}
+
+
+ADVANTAGES OF RELATIVE X PATH
+--------------------------------
+eg 1   ---- *more than one element having same 
+attribute --- index value
+
+ first name  name = user
+ last name   name = user
+
+  ****{syntax ==== // tagname [@attribute = "value"][index]}
+
+
+eg 2 ----same element will have its value dynamically changing
+==============================================================
+name== user1 ---24 hours       (user is the constant value)
+name ==user2 ------48 hours
+
+*****{syntax -== //tagname[contains-text(@attribute,' constant-value')]
+
+
+eg 3---- <ul> <ol> <li> tags 
+=============================================================   
+   ****{syntax---- //tagname[@attribute="value']/following/(sibling)/(proceeding)}------we want to select list of elements
+
+<ul id list>
+ <li> red </li>    xpath //ul[@id='list']/li[2] (li is the following tag to the ul)
+ <li> blue</li>
+ <li> pink </li>
+</ul>
+
+eg 4 -- normalize the space 
+ ==================================================================      
+  ***{syntax ----- // tagname[normalize-space(@attribute,'value')}
+
+name = "     append  " 
+
+eg 5 ---if there is confusion in which tag name provide
+=================================================================
+<a>
+ <img>
+<a>------regular expression  means pattren matching 
+tagname ---pattrens --* --one or more char 
+         //*[@src='url']

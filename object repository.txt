@@ -1,0 +1,47 @@
+object repositorypackage objectrepository;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Elements {
+	
+	public WebElement us(WebDriver driver){
+		
+		return driver.findElement(By.id("userName"));
+	}
+	
+	public WebElement pwd(WebDriver driver) {
+		return driver.findElement(By.name("password"));
+
+}
+	public WebElement loginbutton(WebDriver driver){
+		
+		return driver.findElement(By.xpath("//*[@id=\"Login\"]"));
+	}
+}
+--------------------------------------
+optimize using static
+
+package objectrepository;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Elements {
+	
+	public  static WebElement us(WebDriver driver){
+		
+		return driver.findElement(By.id("userName"));
+	}
+	
+	public static WebElement pwd(WebDriver driver) {
+		return driver.findElement(By.name("password"));
+
+}
+	public static WebElement loginbutton(WebDriver driver){
+		
+		return driver.findElement(By.xpath("//*[@id=\"Login\"]"));
+	}
+}

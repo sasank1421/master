@@ -1,0 +1,49 @@
+checkbox handson
+
+package webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class checkbox {
+  @Test
+  public void f() throws InterruptedException {
+	//System.setProperty("webdriver.chrome.driver", "C:\\Users\\PK\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+	 // WebDriver driver = new ChromeDriver();
+	  
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+	  
+	  driver.get("https://leafground.com/checkbox.xhtml;jsessionid=node0d5gt6pr6kkyc1pex7amkoz6657087.node0");
+	  
+	  driver.findElement(By.xpath("//*[@id='j_idt87:j_idt89']/div[2]")).click();
+	  
+	  driver.findElement(By.xpath("//*[@id=\'j_idt87:j_idt91\']/div[2]")).click();
+	  
+	  driver.findElement(By.xpath("//*[@id='j_idt87:basic']/tbody/tr/td[1]/div/div[2]")).click();
+	  
+	  driver.findElement(By.xpath("//*[@id='j_idt87:basic']/tbody/tr/td[3]/div/div[2]")).click();
+	  
+	  
+	 WebElement element1= driver.findElement(By.xpath("//*[@id='j_idt87:ajaxTriState']/div[2]"));
+	 
+	 for( int i =1 ;i<=3;i++) {
+		 element1.click();
+		 //Thread.sleep(10000);
+	 }
+	 
+	 driver.findElement(By.xpath("//*[@id='j_idt87:j_idt100']/div[2]")).click();
+	  boolean outputvalue=driver.findElement(By.xpath("//*[@id='j_idt87:j_idt102']")).isEnabled();
+	 if (outputvalue==true){
+		 System.out.println("checkbox is disabled");
+	 }
+	 driver.findElement(By.xpath("//*[@id='j_idt87:multiple']/div[3]")).click();
+	 driver.findElement(By.xpath("//*[@id='j_idt87:multiple_panel']/div[2]/ul/li[2]/div/div[2]")).click();
+	 driver.findElement(By.xpath("//*[@id='j_idt87:multiple_panel']/div[2]/ul/li[7]/div/div[2]")).click();
+  }
+}

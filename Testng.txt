@@ -1,0 +1,113 @@
+       TestNG CLASS
+
+
+
+package testng;
+
+import org.testng.annotations.Test;
+
+public class Test1 {
+
+	@ Test 
+	public void  eg1 (){
+		
+		System.out.println( "Testng class");
+		
+	}
+}
+----------------------------------------------------------
+ANNOTATIONS
+package testng;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
+
+public class NewTest {
+  @Test
+  public void f() {
+  }
+  @BeforeMethod
+  public void beforeMethod() {
+  }
+
+  @AfterMethod
+  public void afterMethod() {
+  }
+
+  @BeforeClass
+  public void beforeClass() {
+  }
+
+  @AfterClass
+  public void afterClass() {
+  }
+
+  @BeforeTest
+  public void beforeTest() {
+  }
+
+  @AfterTest
+  public void afterTest() {
+  }
+
+  @BeforeSuite
+  public void beforeSuite() {
+  }
+
+  @AfterSuite
+  public void afterSuite() {
+  }
+
+}
+-------------------------STRUCTURE IN TESTNG-------
+<SUITE>
+  <test1>
+    <class1>
+      < test method 1>  </ testmethod>
+       < test method 2>  </ testmethod>
+   </class>
+    < / test1>
+
+   < test2 >
+    <class 2>
+      < test method 1>  </ testmethod>
+       < test method 2>  </ testmethod>
+   </class>
+    < / test2>
+     < suite>
+
+------------------------------------
+
+TO CREATE TESTNG SUITE  STEPS 
+* SELECT PACKAGE AND RIGHT CLICK
+* SELECT TESTNG AND SELECT TESTNG CONVERT
+* CLICK ON NEXT AND FINISH
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test  name="Test">
+    <classes>
+      <class name="testng.Test1"/>     ------------------ONE TEST
+      <class name="testng.NewTest"/>
+    </classes>
+  </test> <!-- Test -->
+
+
+  
+   <test  name="Test1">
+    <classes>
+      <class name="testng.Test1"/>  ---------------- SECOND TEST
+      <class name="testng.NewTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+

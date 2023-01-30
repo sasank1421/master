@@ -1,0 +1,15 @@
+frames handson
+
+ driver.get("https://demo.automationtesting.in/Frames.html");
+	  driver.switchTo().frame("singleframe");
+	  driver.findElement(By.xpath("/html/body/section/div/div/div/input")).sendKeys("lochana");
+	  driver.switchTo().defaultContent();
+	  
+	  driver.findElement(By.xpath("/html/body/section/div[1]/div/div/div/div[1]/div/ul/li[2]")).click();
+	  WebElement f1 =driver.findElement(By.xpath("//*[@id=\"Multiple\"]/iframe"));
+	  driver.switchTo().frame(f1);
+	  WebElement f2 =driver.findElement(By.xpath("/html/body/section/div/div/iframe"));
+	  driver.switchTo().frame(f2);
+	  
+	  driver.findElement(By.xpath("/html/body/section/div/div/div/input")).sendKeys("sasank");
+	  driver.switchTo().defaultContent();

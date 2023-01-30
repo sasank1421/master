@@ -1,0 +1,153 @@
+ANNOTATIONS
+
+
+package juniteg;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+
+import org.junit.Test;
+
+public class Test1Test2  extends Test1Test {
+	Test1 obj = new Test1();
+	
+	@Test
+	public void testAdd1() {
+		assertEquals(8,obj.add1(4, 4));
+	}
+
+	@Test
+	public void testSub1() {
+	assertEquals (0,obj.sub1(4, 4));
+}
+
+	@Test
+	public void assertion() {
+		
+		String [] expected = {"lochana"};
+		String [] actual = {"lochana"};
+		assertArrayEquals(expected,actual);
+	}
+
+	@Test
+	public void assertion1() {
+	Object car = null;
+		
+		assertNull("the car should be null", car);
+	}
+	
+	@Test
+	public void assertion2() {
+	String[] car = {"red"};
+		
+		assertNotNull("the car should be red", car);
+	}
+	
+	@Test
+	public void assertion3 () {
+	int [] P1 = {1,2,3};
+	int []P2 = {1,2,3,4};
+	int [] P3 = P1;
+	
+	assertSame (P1,P3);
+		
+	}
+	
+	@Test
+	public void assertion4 () {
+		int [] P1 = {1,2,3};
+		int []P2 = {1,2,3,4};
+		int [] P3 = P1;
+		
+		assertNotSame (P1,P2);
+	}
+	
+	@Test
+	public void assertion5 () {
+		int value1 = 5;
+		int value2 = 6;
+		assertFalse(value1 == 6);
+		
+	}
+
+	
+}
+package juniteg;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class Test1Test {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		System.out.println("collect data from database");
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+		System.out.println( "close the execution");
+	}
+
+	@Before
+	public void setUp() throws Exception {
+		System.out.println(" add two numbers "); 
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.out.println(" report the results");
+	}
+
+	
+}
+RESULTS
+
+collect data from database
+ add two numbers 
+ report the results
+ add two numbers 
+ report the results
+ add two numbers 
+ report the results
+ add two numbers 
+ report the results
+ add two numbers 
+ report the results
+ add two numbers 
+ report the results
+ add two numbers 
+ report the results
+ add two numbers 
+ report the results
+close the execution
+ ______________________________________________________-
+
+SUITE  FILE( NEW - OTHER- JAVA- JUNITSUIT)
+
+package juniteg;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+
+@RunWith(Suite.class)
+@SuiteClasses({ Test1Test2.class })
+public class AllTests {
+
+}
+
+
+
+
+

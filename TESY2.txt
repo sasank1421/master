@@ -1,0 +1,664 @@
+Testng suite file
+----------------------------------
+package testng;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class CALUCULATORTest extends  NewTest {
+	CALUCULATOR cal = new CALUCULATOR();
+
+  @Test
+  public void add1Test() {
+	  Assert.assertEquals(20,cal.add1(10, 10));
+	  System.out.println(" add  assertion");
+    
+  }
+
+  @Test
+  public void sub1Test() {
+	  Assert.assertEquals(0,cal.sub1(10, 10));
+	  System.out.println(  "sub assertion");
+	  
+   
+  }
+}
+
+package testng;
+
+import org.testng.annotations.Test;
+
+public class Test1 extends NewTest {
+	@Test
+
+	public void eg1 () {
+		System.out.println("Testing class");
+	}
+}
+
+
+
+package testng;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
+
+public class NewTest {
+  @Test
+  public void f() {
+  }
+  @BeforeMethod
+  public void beforeMethod() {
+	  System.out.println( "it will execute before test method"); 
+  }
+
+  @AfterMethod
+  public void afterMethod() {
+	  System.out.println( "it execute after each @testmethod  complete");
+  }
+
+  @BeforeClass
+  public void beforeClass() {
+	  System.out.println( "it will execute before class starts");
+  }
+
+  @AfterClass
+  public void afterClass() {
+	  System.out.println("it execute after each class  complete" );
+  }
+
+  @BeforeTest
+  public void beforeTest() {
+	  System.out.println( "execute before test");
+  }
+
+  @AfterTest
+  public void afterTest() {
+	  System.out.println("it execute after each test  complete");
+  }
+
+  @BeforeSuite
+  public void beforeSuite() {
+	  System.out.println("execute beforesuite");
+  }
+
+  @AfterSuite
+  public void afterSuite() {
+	  System.out.println( "it will execute after entire suite file completed");
+  }
+
+}
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite name="Suite">
+
+  <test  name="Test1">
+  
+    <classes>
+    
+      <class name="testng.CALUCULATORTest"/>
+      
+    </classes>
+    
+  </test> 
+  
+  
+  
+   <test  name="Test2">
+  
+    <classes>
+      
+      <class name="testng.NewTest"/>
+      
+    </classes>
+    
+    </test>
+    
+  
+  
+</suite> 
+------------------------------------------RESULT------------------------------
+[RemoteTestNG] detected TestNG version 7.4.0
+execute beforesuite---------------------------------------------------------@BEFORE SUITE
+execute before test---------------------------------------------------------@ BEFORE TEST
+it will execute before class starts-----------------------------------------@ BEFORE CLASS
+it will execute before test method-------------------------------------------@ BEFORE METHOD
+ add  assertion
+it execute after each @testmethod  complete-----------------------------------@ AFTER METHOD
+it will execute before test method--------------------------------------------@  BEFORE METHOd__________________________1 st class
+sub assertion
+it execute after each @testmethod  complete---------------------------------------@ AFTER METHO
+it execute after each class  complete------------------------------------------------@ after class
+it execute after each test  complete------------------------------------------------@after test
+
+execute before test----------------------------------------------------------------------@before test
+it will execute before class starts-------------------------------------------------------@before class
+it will execute before test method---------------------------------------------------------@ before method_________________2nd class
+Testing class
+it execute after each @testmethod  complete-------------------------------------------@after method
+it execute after each class  complete-------------------------------------------------@ after class
+it execute after each test  complete-------------------------------------------------@after test
+it will execute after entire suite file completed------------------------------------@ AFTER SUITE
+
+===============================================
+Suite
+Total tests run: 5, Passes: 5, Failures: 0, Skips: 0
+
+------------------------------------------------result 2---------------------------------------------------------------------------------
+package testng;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class CALUCULATORTest extends  NewTest {
+	CALUCULATOR cal = new CALUCULATOR();
+
+  @Test
+  public void add1Test() {
+	  Assert.assertEquals(20,cal.add1(10, 10));
+	  System.out.println(" add  assertion");
+    
+  }
+
+  @Test
+  public void sub1Test() {
+	  Assert.assertEquals(0,cal.sub1(10, 10));
+	  System.out.println(  "sub assertion");
+	  
+   
+  }
+}
+
+package testng;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
+
+public class NewTest {
+  @Test
+  public void f() {
+  }
+  @BeforeMethod
+  public void beforeMethod() {
+	  System.out.println( "it will execute before test method"); 
+  }
+
+  @AfterMethod
+  public void afterMethod() {
+	  System.out.println( "it execute after each @testmethod  ");
+  }
+
+  @BeforeClass
+  public void beforeClass() {
+	  System.out.println( "it will execute before class starts");
+  }
+
+  @AfterClass
+  public void afterClass() {
+	  System.out.println("it will execute after each class " );
+  }
+
+  @BeforeTest
+  public void beforeTest() {
+	  System.out.println( "execute before test");
+  }
+
+  @AfterTest
+  public void afterTest() {
+	  System.out.println("it execute after each test  ");
+  }
+
+  @BeforeSuite
+  public void beforeSuite() {
+	  System.out.println("execute beforesuite");
+  }
+
+  @AfterSuite
+  public void afterSuite() {
+	  System.out.println( "it will execute after entire suite file completed");
+  }
+
+}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite name="Suite">
+
+  <test  name="Test1">
+  
+    <classes>
+    
+      <class name="testng.CALUCULATORTest"/>
+      
+    </classes>
+    
+  </test> 
+  
+</suite> 
+
+
+
+===============================================
+
+
+[RemoteTestNG] detected TestNG version 7.4.0
+execute beforesuite-----------------------------------------@before suite
+execute before test-----------------------------------------@before test
+it will execute before class starts-------------------------@before class
+it will execute before test method--------------------------@ before method
+ add  assertion
+it execute after each @testmethod ---------------------------@ after method 
+it will execute before test method----------------------------@before method
+sub assertion
+it execute after each @testmethod-----------------------------@ after method   
+it will execute after each class ------------------------------@after class
+it execute after each test  ------------------------------------@ after test
+it will execute after entire suite file completed------------------@  after suite
+
+===============================================
+Suite
+Total tests run: 3, Passes: 3, Failures: 0, Skips: 0
+===============================================
+
+sysout statement for console
+reporter.log for report statement
+
+----------------------------------------------------------------------------------------------------------------------------=------------
+DEPENDONMETHOD======In testng print will do based on the alphabetical order for example registraion after login but on run  it will show
+                     login then reg , to avoid this dependonmethods
+
+package testng;
+
+import org.testng.annotations.Test;
+
+public class Dependon {
+	
+	@Test
+	public void reg() {
+		System.out.println("reg method");
+	}
+
+	@Test
+	public void login() {
+		System.out.println("login method");
+	}
+	
+	
+}
+
+
+
+[RemoteTestNG] detected TestNG version 7.4.0
+login method
+reg method
+PASSED: login
+PASSED: reg
+
+===============================================
+    Default test
+    Tests run: 2, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 2, Passes: 2, Failures: 0, Skips: 0
+===============================================
+
+
+
+package testng;
+
+import org.testng.annotations.Test;
+
+public class Dependon {
+	
+	@Test
+	public void reg() {
+		System.out.println("reg method");
+	}
+
+	@Test(dependsOnMethods="reg")
+	public void login () {
+		System.out.println("login method");
+	}
+	
+	
+}
+
+
+[RemoteTestNG] detected TestNG version 7.4.0
+reg method
+login method
+PASSED: reg
+PASSED: login
+
+---------------------------------------------------------------------------------------------------------------------------------------
+GROUPING---------if we want to test 20 test methods in 100 then we will group the test methods
+
+include == it will run only that groups
+exclude == it   wil exclude that group test method and run all the reamianing test methods wether it is any other group or not into a group itself
+
+
+package testng;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class CALUCULATORTest extends  NewTest {
+	CALUCULATOR cal = new CALUCULATOR();
+
+  @Test(groups="smoke")
+  public void add1Test() {
+	  
+	  Assert.assertEquals(20,cal.add1(10, 10));
+	  
+	  System.out.println(" add  assertion");
+    
+  }
+
+  @Test(groups = "regresaion")
+  public void sub1Test() {
+	  
+	  Assert.assertEquals(0,cal.sub1(10, 10));
+	  System.out.println(  "sub assertion");
+	  
+   
+  }
+}
+
+
+package testng;
+
+import org.testng.annotations.Test;
+
+public class Test1 extends NewTest  {
+	
+	@Test(groups = "regression")
+
+	public void eg1 () {
+		
+		System.out.println("Testing class");
+	}
+}
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite name="Suite">
+<groups>
+
+<run>
+
+<include name ="regression">
+
+</include>
+
+</run>
+
+</groups>
+  <test  name="Test1">
+  
+    <classes>
+    
+      <class name="testng.CALUCULATORTest"/>
+      
+    </classes>
+    
+  </test>
+  
+  <test  name="Test2">
+  
+    <classes>
+    
+      <class name="testng.Test1"/>
+      
+    </classes>
+    
+  </test> 
+</suite>
+===============================================
+[RemoteTestNG] detected TestNG version 7.4.0
+sub assertion
+Testing class
+
+===============================================
+Suite
+Total tests run: 2, Passes: 2, Failures: 0, Skips: 0
+===============================================
+
+
+<groups>
+
+<run>
+
+<exclude name ="regression">
+
+</exclude>
+
+</run>
+
+</groups>
+-------------------------------------------------------------------------------------------------------------------
+
+	PRIORITY-----
+       NON PRIORITY ===DEFAULT VALUE =0
+       U CAN GIVE NEGATIVE VALUE 
+   IF more than one testmethod have same priority then it will run according to alphabetical order
+
+
+package testng;
+
+
+import org.testng.annotations.Test;
+
+public class Dependon extends NewTest {
+	
+
+	@Test(priority =1)
+	public void reg() {
+		
+		System.out.println("reg method");
+	}
+
+	@Test(priority=2)
+	public void login () {
+		System.out.println("login method");
+		
+	}
+	@Test
+	public void search () {
+		System.out.println("search for the products");
+		
+	
+}
+}
+[RemoteTestNG] detected TestNG version 7.4.0
+execute beforesuite
+execute before test
+it will execute before class starts
+it will execute before test method starts
+it execute after each @testmethod  
+it will execute before test method starts
+search for the products
+it execute after each @testmethod  
+it will execute before test method starts
+reg method
+it execute after each @testmethod  
+it will execute before test method starts
+login method
+it execute after each @testmethod  
+it will execute after each class 
+it execute after each test  
+PASSED: f
+PASSED: search
+PASSED: reg
+PASSED: login
+
+===============================================
+    Default test
+    Tests run: 4, Failures: 0, Skips: 0
+===============================================
+
+it will execute after entire suite file completed
+
+===============================================
+Default suite
+Total tests run: 4, Passes: 4, Failures: 0, Skips: 0
+===============================================
+
+
+------------------------------------------------------------------------------------------------------------------
+Parallel testing
+
+
+
+
+
+package testng;
+
+
+
+
+import org.testng.annotations.Test;
+
+public class Dependon extends NewTest {
+	
+	
+
+	@Test
+	public void reg() {
+		System.out.println("thread value is"+Thread.currentThread().getId());
+		
+		System.out.println("reg method");
+	}
+
+	@Test
+	public void login () {
+		System.out.println("thread value is"+Thread.currentThread().getId());
+		System.out.println("login method");
+		
+	}
+	@Test
+	public void search () {
+		System.out.println("thread value is"+Thread.currentThread().getId());
+		System.out.println("search for the products");
+		
+	
+}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+DATA PROVIDER   to test the scripts with multiple values
+
+
+
+
+package testng;
+
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class CALUCULATORTest extends  NewTest {
+	CALUCULATOR cal = new CALUCULATOR();
+
+  @Test(dataProvider="dpadd")------------------------we should map to data provider to test method
+  public void add1Test(int expected ,int a,int b) {
+	  
+	  Assert.assertEquals(expected , cal.add1(a, b));-----------order should be given by the values we provided
+
+  }
+
+  @DataProvider(name="dpadd")
+	  public Object [][] getdata(){---------------------------create a method (and dont give void because it is a written value)
+	  Object [][] t1= new Object[][] {-----------creation of object                       
+                                                                       * Object can store any type of data (string nd int)
+                                                                   *same data type multiple values so we are giving array[],
+                                                                       in one iteration we are pasing 3 values expected value, a value and b value.
+                                                                  * for multiple values we will give we will give multidimensional array[] 
+		  
+		  {10,5,5},
+		  {20,10,10},
+		  {6,3,3},
+		  {8,3,5},
+		  {9,6,3},
+		  {25,6,9}
+		  
+	  };
+	  return t1;----------------------values are written at t1 
+
+package testng;
+
+
+
+
+import org.testng.annotations.Test;
+
+public class Dependon extends NewTest {
+	
+	
+
+	@Test(enabled = false)// @ignore//
+	public void reg() {
+		System.out.println("thread value is"+Thread.currentThread().getId());
+		
+		System.out.println("reg method");
+	}
+
+	@Test(timeOut = 10000)//synchronization//
+	public void login () {
+		System.out.println("thread value is"+Thread.currentThread().getId());
+		System.out.println("login method");
+		
+	}
+	@Test(expectedExceptions = Exception.class)//EXCEPTION HANDLING
+	public void search () {
+		System.out.println("thread value is"+Thread.currentThread().getId());
+		System.out.println("search for the products");
+		
+	
+}
+}
+
+-------------------------------------------------------------------------------------------
+  }
+  
+ 
+}
+
+
+Run to testmethod,class,test at the same time
+
+ <test  name="Test3" parallel = "methods" thread-count="3">
+  
+    <classes>
+    
+      <class name="testng.Dependon"/>
+      
+    </classes>
+    
+  </test> 
+</suite> 
+

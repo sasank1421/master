@@ -1,0 +1,74 @@
+list handson
+
+package webdriver;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class list {
+  /**
+ * 
+ */
+@Test
+  public void f() {
+	  
+	  
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+ driver.get("https://demo.automationtesting.in/Selectable.html");
+	  driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div[1]/ul/li[2]/a")).click();
+	  List<WebElement>list= driver.findElements(By.xpath("//*[@id=\"Serialize\"]/ul/li"));
+	  System.out.println(list.size());
+	  
+	  Actions act = new Actions(driver);
+	  act.keyDown(Keys.CONTROL)
+	  .click(list.get(0))
+	  .click(list.get(3))
+	  .click(list.get(6))
+	  .build().perform();
+	  
+	  System.out.println(list.get(0).getText());
+	  System.out.println(list.get(3).getText());
+	  System.out.println(list.get(6).getText());	  
+	  
+  }
+}
+-------------------------result----------------------
+[RemoteTestNG] detected TestNG version 7.4.0
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 23714
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jan 24, 2023 5:44:50 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+7
+Sakinalium - Readability
+Sakinalium - Cross Browser Testing
+Sakinalium - Functional Testing
+PASSED: f
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 1, Passes: 1, Failures: 0, Skips: 0
+===============================================
+
+
+	  

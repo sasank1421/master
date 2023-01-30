@@ -1,0 +1,41 @@
+handon file download
+
+package webdriver;
+
+import java.io.File;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class filedownload {
+  @Test
+  public void f() {
+	  
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+	   driver.get("https://demo.automationtesting.in/FileDownload.html");
+	 driver.findElement(By.xpath("/html/body/section/div[1]/div/div/div[1]/a")).click();
+	 File f1 = new File("C:\\Users\\PK\\Downloads");
+	 String[] totalfiles =f1.list();
+	 for( String file1 :totalfiles) {
+	  if(file1.equalsIgnoreCase("samplefile.pdf")) {
+		  System.out.println("file sucessfully download");
+	  }
+	 }
+	 driver.findElement(By.id("textbox")).sendKeys("my name is lochana");
+	 driver.findElement(By.id("createTxt")).click();
+	 driver.findElement(By.id("link-to-download")).click();
+	 File f2 = new File("C:\\Users\\PK\\Downloads");
+	 String[] totalfiles1 =f2.list();
+	 for( String file1 :totalfiles1) {
+	  if(file1.equalsIgnoreCase("info.txt")) {
+		  System.out.println("textfile sucessfully download");
+  }
+}
+  }
+}
+

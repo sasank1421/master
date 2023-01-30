@@ -1,0 +1,42 @@
+package webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class drag {
+  @Test
+  public void f() {
+	  
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+	  
+	  driver.get("https://leafground.com/dashboard.xhtml");
+	  driver.get("https://leafground.com/drag.xhtml");
+	 
+	  
+	  //source know traget not known
+	 WebElement drag= driver.findElement(By.xpath("//*[@id='form:conpnl_header']"));
+	  Actions act = new Actions(driver);
+	  act.dragAndDropBy(drag, 250, 270).build().perform();
+	  
+	  //source and target both known
+	  WebElement so = driver.findElement(By.id("form:drag_content"));
+	  WebElement dest = driver.findElement(By.id("form:drop_header"));
+	  act.dragAndDrop(so, dest).build().perform();
+	  
+	  //enter email ina tect box and highlight and right click
+	// WebElement el =driver.findElement(By.id("email"));
+	 /* act.sendKeys(el, "lochanasusantha346@gmail.com")
+	  .doubleClick()
+	  .contextClick()
+	  .build()
+	  .perform();*/
+	  
+  }
+}

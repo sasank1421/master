@@ -1,0 +1,53 @@
+hyperlinks handson
+
+package webdriver;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+
+public class hyperlink {
+  @Test
+  public void f() {
+	  
+	//System.setProperty("webdriver.chrome.driver", "C:\\Users\\PK\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+		 // WebDriver driver = new ChromeDriver();
+	  
+		  WebDriverManager.chromedriver().setup();
+		  WebDriver driver = new ChromeDriver();
+		  
+		  driver.get("https://leafground.com/link.xhtml;jsessionid=node09elxkmpq826w1j68svdowgluu57798.node0");
+		  
+		  driver.findElement(By.linkText("Go to Dashboard")).click();
+		  driver.navigate().back();
+		 String desturl= driver.findElement(By.linkText("Find the URL without clicking me.")).getAttribute("href");
+		  System.out.println(desturl);
+		   
+		   driver.findElement(By.linkText("Broken?")).click();
+		   driver.navigate().back();
+		   driver.findElement(By.linkText("Go to Dashboard")).click();
+		   
+		   //String currenttitle =driver.getTitle();
+		  // Assert.assertEquals("ERROR 404 /lists.xhtml Not Found in ExternalContext as a Resource",currenttitle );
+		   
+		  List<WebElement> links= driver.findElements(By.tagName("a"));
+		  
+		  int count = links.size();
+		  System.out.println(count);
+		  driver.get("https://leafground.com/list.xhtml");
+		  List<WebElement> links1= driver.findElements(By.tagName("a"));
+		  int count1 = links1.size();
+		  System.out.println(count);
+		  
+  }
+}
+

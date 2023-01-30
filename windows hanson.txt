@@ -1,0 +1,61 @@
+// no of tabs opened in the windows count
+	  
+	  driver.findElement(By.id("j_idt88:j_idt91")).click();
+  System.out.println(driver.getTitle());
+	  
+	 Set<String> windowvalues=driver.getWindowHandles();
+	 
+	 Iterator <String>iter= windowvalues.iterator();
+	 
+	  String w1=iter.next();
+	  System.out.println(w1);
+	  
+	  String w2 =iter.next();
+	  System.out.println(w2);
+	  
+	  String w3 =iter.next();
+	  System.out.println(w3);
+	  
+	  
+	  driver.switchTo().window(w2);  
+	  System.out.println(driver.getTitle());
+	  
+	  driver.switchTo().window(w3);  
+	  System.out.println(driver.getTitle());
+	  
+	  driver.switchTo().window(w1);
+	  
+	  ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+	  System.out.println("No. of tabs: " + tabs.size());
+result
+----------------------------------------------------------
+[RemoteTestNG] detected TestNG version 7.4.0
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 44875
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jan 23, 2023 4:48:56 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Window
+CDwindow-D11A907F4A54422A9A3DE1B56E140D05
+CDwindow-7F421959F57E862B6A291E336D142B83
+CDwindow-4C2D6B07A8E23525D32409440BCFBCB3
+Dashboard
+Web Table
+No. of tabs: 3
+PASSED: f
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 1, Passes: 1, Failures: 0, Skips: 0
+===============================================
+

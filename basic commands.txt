@@ -1,0 +1,14 @@
+BASIC COMMANDS
+
+System.out.println(driver.getPageSource());  
+	System.out.println(driver.getCurrentUrl());
+	driver.navigate().back();
+	driver.navigate().forward();
+	driver.navigate().refresh();
+	driver.navigate().to("https://www.myhcl.com/bprhome/Home/Index");
+	driver.manage().window().maximize();
+	Dimension di = new Dimension(250, 250);
+driver.manage().window().setSize(di);
+	driver.close();
+	driver.quit();
+	

@@ -1,0 +1,55 @@
+package webdriver;
+
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+
+public class buttonsverify<webelement> {
+  @Test
+  public void f() throws InterruptedException {
+	  //System.setProperty("webdriver.chByrome.driver", "C:\\Users\\PK\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+	  //WebDriver driver= new ChromeDriver();
+	  
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver= new ChromeDriver();
+	  
+	  driver.get("https://leafground.com/button.xhtml");
+	 driver.findElement(By.xpath("//*[@id='j_idt88:j_idt90']/span")).click();
+	  Thread.sleep(10000);
+	  driver.navigate().back();
+	  boolean output=driver.findElement(By.id("j_idt88:j_idt92")).isEnabled();
+	  if(output== true) {
+	  System.out.println("button is disabled");}
+	  
+	 Point position= driver.findElement(By.id("j_idt88:j_idt94")).getLocation();
+	 int x= position.getX();
+	int y= position.getY();
+	 System.out.println(x);
+	 System.out.println(y);
+	  String colour =driver.findElement(By.id("j_idt88:j_idt96")).getCssValue("colour");
+	 System.out.println(colour);
+	String height= driver.findElement(By.id("j_idt88:j_idt98")).getCssValue("height");
+	 System.out.println(height);
+	 String width= driver.findElement(By.id("j_idt88:j_idt98")).getCssValue("width");
+	 System.out.println(width);
+	 driver.findElement(By.xpath("//*[@id='j_idt88:j_idt100']/span")).click();
+	 
+	 String colour1= driver.findElement(By.name("j_idt88:j_idt100")).getCssValue("colour");
+	 System.out.println(colour1);
+	 
+	 driver.findElement(By.id("j_idt88:j_idt102:imageBtn")).click();
+	 
+	List<WebElement> radiobuttons= driver.findElements(By.xpath("//input[@type='button')"));
+	System.out.println("total number of radio buttons:"+ radiobuttons.size());
+  }
+}

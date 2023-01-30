@@ -1,0 +1,41 @@
+messagees
+
+package webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+public class msg {
+  @Test
+  public void f() throws InterruptedException {
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+	  
+	  driver.get("https://leafground.com/dashboard.xhtml");
+	  driver.get("https://leafground.com/messages.xhtml");
+	  
+	  driver.findElement(By.id("j_idt100:submitButton")).click();
+	  Thread.sleep(10000);
+	 String error= driver.findElement(By.id("j_idt100:j_idt104")).getText();
+	  System.out.println(error);
+	  Assert.assertEquals("First Name is required",error);
+	  
+	  
+	  String error1= driver.findElement(By.id("j_idt100:j_idt108")).getText();
+	  System.out.println(error1);
+	  Assert.assertEquals("Last Name is required",error1);
+	  Thread.sleep(10000);
+	  
+	  String error2= driver.findElement(By.id("j_idt100:j_idt112")).getText();
+	  System.out.println(error2);
+	  Assert.assertEquals("Email is required",error2);
+	  
+	  
+}
+}

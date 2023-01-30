@@ -1,0 +1,80 @@
+WEBDRIVER
+package webdriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+public class test {
+  @Test
+  public void f() {
+	  
+	  //mehod1
+	//  System.setProperty("webdriver.chrome.driver", "C:\\Users\\PK\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+	  
+	 // WebDriver driver = new ChromeDriver();
+	  
+	  WebDriverManager.chromedriver().setup();
+	  WebDriver driver = new ChromeDriver();
+
+	  driver.get("https://leafground.com/")---------------------------------driver.get(url)
+
+	  driver.findElement(By.id("email")).sendKeys("artisttvn@gmail.com");------GIVING EMAIL TO EMAIL FIELD	
+  
+	  driver.get("https://leafground.com/input.xhtml;jsessionid=node01nlwou836b68q2os3ct0s8w2452516.node0");----GET URL
+
+	  driver.findElement(By.id("j_idt88:name")).sendKeys("lochana");--------GIVING NAME TO NAME FIELD
+
+	  driver.findElement(By.id("j_idt88:j_idt91")).sendKeys("india");
+
+	  boolean output = driver.findElement(By.cssSelector("input[id=\"j_idt88:j_idt93\"]")).isEnabled();--------verify the text is disabled or not
+	  if (output == false) {
+		  System.out.println("textbox is disabled");
+	  }
+	driver.findElement(By.xpath("//*[@id='j_idt88:j_idt95']")).clear();--------by ading xpath and clear the text in the textbox
+ 
+										(click on inspect-select element-click on copy full xpath)
+  
+ String valueinfield=driver.findElement(By.id("j_idt88:j_idt97")).getAttribute("value");---------GET ATTRIBUTE VALUE FROM APPLICATION 
+	  System.out.println( valueinfield);
+
+ driver.findElement(By.name("j_idt88:j_idt99")).sendKeys("susanthalochana346@gmail.com");------ENTERING EMAIL AND CURSOR MOVE TO NEXT BOX BY ENTERING TAB KEY
+	  driver.findElement(By.name("j_idt88:j_idt99")).sendKeys(Keys.TAB);
+
+ driver.findElement(By.id("j_idt88:j_idt101")).sendKeys("my name is lochana working as senior testengineer in hcl");--about yourself textbox
+driver.findElement(By.id("j_idt106:thisform:age")).sendKeys(Keys.ENTER);
+	driver.findElement(By.id("j_idt106:float-input")).click();
+	
+	driver.findElement( By.id("j_idt106:auto-complete_input")).sendKeys("lochana");
+	driver.findElement(By.id("j_idt106:auto-complete_hinput")).click();
+driver.findElement(By.xpath("//*[@id='j_idt106:j_idt116']/button/span[1]")).click();-------calender selection
+	driver.findElement(By.id("j_idt106:j_idt116_input")).sendKeys("12-13-1986");
+	driver.findElement(By.id("j_idt106:j_idt118_input")).sendKeys("1");
+	Thread.sleep(10000);
+driver.findElement(By.xpath("//*[@id='j_idt106:j_idt118']/a[1]")).click();
+Thread.sleep(10000);
+driver.findElement(By.xpath("//*[@id='j_idt106:j_idt118']/a[2]/span/span")).click();
+driver.findElement(By.name("j_idt106:slider")).sendKeys("12");
+// WebElement min_slider =driver.findElement(By.xpath("//*[@id='j_idt106:j_idt120']/span")) ;
+//Actions act = new Actions( driver);
+// act.dragAndDropBy(min_slider, 50, 60).perform();
+ driver.findElement(By.name("j_idt106:j_idt122")).click();
+driver.findElement(By.xpath("//*[@id='j_idt106:j_idt124_editor']/div[1]")).sendKeys("my name is lochana");
+
+
+
+
+}
+
+}
+
+
+
+===============================================
+
+
+-------------------------------------------------------------------------------------------------------------------
